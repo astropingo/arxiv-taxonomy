@@ -18,11 +18,6 @@ category_names = soup.find_all("div", {"class":"accordion-body"})
 groups = zip(group_names, category_names)
 
 # Adicionando cada dado no dicionário arxiv_taxonomy com o seguinte formato:
-# category_id : {
-#     "group_name":,
-#     "category_name":,
-#     "description":
-# }
 for group in groups:
     group_name = group[0].text
     for h4, p in zip(group[1].find_all("h4"), group[1].find_all("p")):
